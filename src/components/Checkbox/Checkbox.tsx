@@ -3,7 +3,7 @@ import './Checkbox.css';
 interface CheckboxProps {
 	checked?: boolean,
 	children?: JSX.Element,
-	label?: JSX.Element,
+	label?: JSX.Element | string,
 	labelPosition?: 'right' | 'left' | 'top' | 'bottom',
 	name?: string,
 	onCheck?: (e: React.ChangeEvent) => void,

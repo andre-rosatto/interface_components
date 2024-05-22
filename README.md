@@ -13,7 +13,7 @@ Default value: false
 The checkbox's box. An element can be passed to create a custom box. If no children are passed, the default system box is used.
 Default value: undefined
 
-#### label: JSX.Element
+#### label: JSX.Element | string
 The element to be used as label.
 Default value: undefined
 
