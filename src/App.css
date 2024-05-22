@@ -1,38 +1,56 @@
 .App {
-  text-align: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 100px 100px;
+	gap: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App>div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px dashed black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App>div p {
+	margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Checkbox .Checkbox__label {
+	color: blue;
 }
 
-.App-link {
-  color: #61dafb;
+.Checkbox.checked .Checkbox__label {
+	color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Checkbox .Checkbox__box {
+	width: 40px;
+	height: 20px;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin: 5px;
+	background-color: darkred;
+	transition: background-color .25s;
+}
+
+.Checkbox.checked .Checkbox__box {
+	background-color: darkgreen;
+}
+
+.Checkbox .Checkbox__checkmark {
+	height: 90%;
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 100%;
+	transform: translate(-50%);
+	transition: transform .25s;
+}
+
+.Checkbox.checked .Checkbox__checkmark {
+	transform: translate(50%);
 }
