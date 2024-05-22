@@ -1,5 +1,6 @@
 # React Interface Components
 
+# Components
 ## Checkbox
 
 A checkbox which can have a label.
@@ -36,3 +37,8 @@ Default value: undefined
 #### onToggle: (nextChecked, e) => void
 Callback function to be called when the checkbox is checked or unchecked.
 Default value: undefined
+
+
+# Hooks
+## useFetch
+useFetch(url: string) => {isPending: boolean, data: any|null, error: any|null}
