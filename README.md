@@ -42,3 +42,6 @@ Default value: undefined
 # Hooks
 ## useFetch
 useFetch(url: string) => {isPending: boolean, data: any|null, error: any|null}
+
+## useLocalStorage
+useLocalStorage(key: string, initialValue: string | Function) => [value: any, setValue: any]

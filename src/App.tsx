@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import CheckboxExample from './examples/CheckboxExample';
-import useFetch from './hooks/useFetch';
+import useLocalStorage from './hooks/useLocalStorage';
 
 const router = createBrowserRouter([
 	{
@@ -13,14 +13,17 @@ const router = createBrowserRouter([
 ]);
 
 function Home() {
-	const { isPending, data, error } = useFetch('https://jsonplaceholder.typicode.com/todos/1');
+	const [ls, setLs] = useLocalStorage('test', '');
 
 	return (
 		<>
 			<a href='./examples/checkbox' target='__blank'>Checkbox</a>
-			<p>isPending: <code>{isPending.toString()}</code></p>
-			<p>data: <code>{JSON.stringify(data)}</code></p>
-			<p>error: <code>{error?.status}</code></p>
+			<br />
+			<input
+				type="text"
+				value={ls}
+				onChange={e => setLs(e.target.value)}
+			/>
 		</>
 	);
 }
