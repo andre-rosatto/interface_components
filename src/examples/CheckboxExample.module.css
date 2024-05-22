@@ -17,15 +17,15 @@
 	margin: 0;
 }
 
-.CheckboxExample .Checkbox .Checkbox__label {
+.label {
 	color: blue;
 }
 
-.CheckboxExample .Checkbox.checked .Checkbox__label {
+.label.checked {
 	color: red;
 }
 
-.CheckboxExample .Checkbox .Checkbox__box {
+.box {
 	width: 40px;
 	height: 20px;
 	border: 1px solid black;
@@ -38,11 +38,11 @@
 	transition: background-color .25s;
 }
 
-.CheckboxExample .Checkbox.checked .Checkbox__box {
+.box.checked {
 	background-color: darkgreen;
 }
 
-.CheckboxExample .Checkbox .Checkbox__checkmark {
+.checkmark {
 	height: 90%;
 	aspect-ratio: 1;
 	background-color: white;
@@ -51,6 +51,6 @@
 	transition: transform .25s;
 }
 
-.CheckboxExample .Checkbox.checked .Checkbox__checkmark {
+.checkmark.checked {
 	transform: translate(50%);
 }

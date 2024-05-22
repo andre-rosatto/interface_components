@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import CheckboxExample from './examples/checkbox';
+import CheckboxExample from './examples/CheckboxExample';
 
 const router = createBrowserRouter([
 	{

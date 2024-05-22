@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Checkbox from "../components/Checkbox/Checkbox";
-import './checkbox.css';
+import styles from './CheckboxExample.module.css';
 
 const CheckboxExample = () => {
 	const [checkeds, setCheckeds] = useState(new Array(4).fill(false));
@@ -11,18 +11,18 @@ const CheckboxExample = () => {
 		setCheckeds(nextCheckeds);
 	}
 	return (
-		<section className="CheckboxExample">
+		<section className={styles.CheckboxExample}>
 			<div>
 				<p>labelPosition = 'right' (default)</p>
 				<Checkbox
 					checked={checkeds[0]}
 					label={
-						<div className='Checkbox__label'>{checkeds[0] ? 'checked' : 'unchecked'}</div>
+						<div className={`${styles.label} ${checkeds[0] && styles.checked}`}>{checkeds[0] ? 'checked' : 'unchecked'}</div>
 					}
 					onToggle={nextChecked => handleToggle(nextChecked, 0)}
 				>
-					<div className='Checkbox__box'>
-						<div className='Checkbox__checkmark'></div>
+					<div className={`${styles.box} ${checkeds[0] && styles.checked}`}>
+						<div className={`${styles.checkmark} ${checkeds[0] && styles.checked}`}></div>
 					</div>
 				</Checkbox>
 			</div>
@@ -33,12 +33,12 @@ const CheckboxExample = () => {
 					checked={checkeds[1]}
 					labelPosition='left'
 					label={
-						<div className='Checkbox__label'>{checkeds[1] ? 'checked' : 'unchecked'}</div>
+						<div className={`${styles.label} ${checkeds[1] && styles.checked}`}>{checkeds[1] ? 'checked' : 'unchecked'}</div>
 					}
 					onToggle={nextChecked => handleToggle(nextChecked, 1)}
 				>
-					<div className='Checkbox__box'>
-						<div className='Checkbox__checkmark'></div>
+					<div className={`${styles.box} ${checkeds[1] && styles.checked}`}>
+						<div className={`${styles.checkmark} ${checkeds[1] && styles.checked}`}></div>
 					</div>
 				</Checkbox>
 			</div>
@@ -49,12 +49,12 @@ const CheckboxExample = () => {
 					checked={checkeds[2]}
 					labelPosition='top'
 					label={
-						<div className='Checkbox__label'>{checkeds[2] ? 'checked' : 'unchecked'}</div>
+						<div className={`${styles.label} ${checkeds[2] && styles.checked}`}>{checkeds[2] ? 'checked' : 'unchecked'}</div>
 					}
 					onToggle={nextChecked => handleToggle(nextChecked, 2)}
 				>
-					<div className='Checkbox__box'>
-						<div className='Checkbox__checkmark'></div>
+					<div className={`${styles.box} ${checkeds[2] && styles.checked}`}>
+						<div className={`${styles.checkmark} ${checkeds[2] && styles.checked}`}></div>
 					</div>
 				</Checkbox>
 			</div>
@@ -65,12 +65,12 @@ const CheckboxExample = () => {
 					checked={checkeds[3]}
 					labelPosition='bottom'
 					label={
-						<div className='Checkbox__label'>{checkeds[3] ? 'checked' : 'unchecked'}</div>
+						<div className={`${styles.label} ${checkeds[3] && styles.checked}`}>{checkeds[3] ? 'checked' : 'unchecked'}</div>
 					}
 					onToggle={nextChecked => handleToggle(nextChecked, 3)}
 				>
-					<div className='Checkbox__box'>
-						<div className='Checkbox__checkmark'></div>
+					<div className={`${styles.box} ${checkeds[3] && styles.checked}`}>
+						<div className={`${styles.checkmark} ${checkeds[3] && styles.checked}`}></div>
 					</div>
 				</Checkbox>
 			</div>
