@@ -1,0 +1,56 @@
+.CheckboxExample {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 100px 100px;
+	gap: 10px;
+}
+
+.CheckboxExample>div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px dashed black;
+}
+
+.CheckboxExample>div p {
+	margin: 0;
+}
+
+.CheckboxExample .Checkbox .Checkbox__label {
+	color: blue;
+}
+
+.CheckboxExample .Checkbox.checked .Checkbox__label {
+	color: red;
+}
+
+.CheckboxExample .Checkbox .Checkbox__box {
+	width: 40px;
+	height: 20px;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin: 5px;
+	background-color: darkred;
+	transition: background-color .25s;
+}
+
+.CheckboxExample .Checkbox.checked .Checkbox__box {
+	background-color: darkgreen;
+}
+
+.CheckboxExample .Checkbox .Checkbox__checkmark {
+	height: 90%;
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 100%;
+	transform: translate(-50%);
+	transition: transform .25s;
+}
+
+.CheckboxExample .Checkbox.checked .Checkbox__checkmark {
+	transform: translate(50%);
+}
