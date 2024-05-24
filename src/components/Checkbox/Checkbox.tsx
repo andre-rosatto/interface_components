@@ -1,5 +1,3 @@
-import './Checkbox.css';
-
 interface CheckboxProps {
 	checked?: boolean,
 	children?: JSX.Element,
@@ -24,39 +22,38 @@ const Checkbox = ({
 
 	const handleChange = (e: React.ChangeEvent) => {
 		const nextChecked = !checked;
-		if (nextChecked && typeof onCheck === 'function') {
+		if (nextChecked && onCheck instanceof Function) {
 			onCheck(e);
-		} else if (!nextChecked && typeof onUncheck === 'function') {
+		} else if (!nextChecked && onUncheck instanceof Function) {
 			onUncheck(e);
 		}
-		if (typeof onToggle === 'function') onToggle(nextChecked, e);
+		if (onToggle instanceof Function) onToggle(nextChecked, e);
 	}
 
-	const getLabelStyle = (): React.CSSProperties => {
-		let flexDirection;
+	const getStyles = (): React.CSSProperties => {
+		const result: React.CSSProperties = {
+			display: 'inline-flex',
+			alignItems: 'center',
+			flexDirection: 'row',
+			justifyContent: labelPosition === 'left' || labelPosition === 'top' ? 'flex-end' : 'flex-start'
+		};
 		switch (labelPosition) {
 			case 'left':
-				flexDirection = 'row-reverse';
+				result.flexDirection = 'row-reverse';
 				break;
 			case 'bottom':
-				flexDirection = 'column';
+				result.flexDirection = 'column';
 				break;
 			case 'top':
-				flexDirection = 'column-reverse';
-				break;
-			default:
-				flexDirection = 'row'
+				result.flexDirection = 'column-reverse';
 		}
-		return {
-			flexDirection: flexDirection,
-			justifyContent: labelPosition === 'left' || labelPosition === 'top' ? 'flex-end' : 'flex-start'
-		} as React.CSSProperties;
+		return result;
 	}
 
 	return (
 		<label
-			className={`Checkbox${checked ? ' checked' : ''}`}
-			style={getLabelStyle()}
+			className={`${checked ? ' checked' : ''}`}
+			style={getStyles()}
 		>
 			{children}
 			<input
